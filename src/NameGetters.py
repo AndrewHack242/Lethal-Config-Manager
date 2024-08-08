@@ -12,6 +12,16 @@ def get_clean_section_name(section_name):
         return section_name
 
 
+def get_filename_for_section(section_name):
+    filename = ""
+    if ' Level' in section_name:
+        filename = "Moon - "
+    elif ' Dungeon' in section_name:
+        filename = "Dungeon - "
+    filename += get_clean_section_name(section_name)
+    return filename
+
+
 def get_moons(config):
     moons = set[str]()
     for section in config.sections():

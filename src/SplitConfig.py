@@ -3,7 +3,7 @@ from configupdater import ConfigUpdater
 import copy
 import os
 
-from src.NameGetters import get_clean_section_name
+from .NameGetters import get_filename_for_section
 
 
 def write_to_file(config, section_to_keep, component_path):
@@ -18,7 +18,7 @@ def write_to_file(config, section_to_keep, component_path):
     if not hit:
         raise ValueError(f'failed on {section_to_keep}')
 
-    name = get_clean_section_name(section_to_keep)
+    name = get_filename_for_section(section_to_keep)
 
     with open(component_path.joinpath(f'{name}.ini'), 'w') as configfile:
         config.write(configfile)

@@ -1,6 +1,7 @@
-from DungeonProbFiller import get_moons, get_dungeons, split_key_value, match
-from MergeConfig import merge_config
-from SplitConfig import get_clean_section_name, split_cfg
+from .DungeonProbFiller import get_moons, get_dungeons, split_key_value, match
+from .MergeConfig import merge_config
+from .SplitConfig import split_cfg
+from .NameGetters import get_clean_section_name
 
 
 # inform

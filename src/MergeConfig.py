@@ -1,8 +1,8 @@
 import copy
 from configupdater import ConfigUpdater
 
-from DungeonProbFiller import translate_and_fill_all_moons
-from ParseLLLConfig import parse_cfg
+from .DungeonProbFiller import translate_and_fill_all_moons
+from .ParseLLLConfig import parse_cfg
 
 
 def merge_config(component_path):

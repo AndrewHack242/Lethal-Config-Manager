@@ -11,6 +11,7 @@ from src.SplitConfig import split_cfg
 
 backup_path = Path('backups')
 component_path = Path('component_configs')
+sys.path.append('src')
 
 
 def parse_args():

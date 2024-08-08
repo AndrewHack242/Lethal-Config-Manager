@@ -2,7 +2,7 @@ import copy
 
 from configupdater import ConfigUpdater
 
-from src.NameGetters import get_moons, get_dungeons, get_clean_section_name
+from .NameGetters import get_moons, get_dungeons, get_clean_section_name
 
 
 def match(key: str, moon: str) -> bool:
