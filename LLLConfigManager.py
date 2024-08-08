@@ -28,7 +28,7 @@ def main(cfg_path: Path) -> int:
 
     input_str = ''
     # y to continue, else inform again
-    while input_str != 'y':
+    while input_str.lower() != 'y':
         print_config_information(component_path)
         input_str = input("\nEnter y to confirm changes, otherwise another information stream will be printed.\n> ")
 
