@@ -32,7 +32,7 @@ def check_for_all_zero(config, field_to_check):
                 print(f'{get_clean_section_name(section)}: Is set to 0 for all key/value pairs')
 
 
-# -> a print out if moon cost is different than the default
+# -> a print-out if moon cost is different from the default
 def check_non_default_route_prices(config):
     print()
     field_to_check = 'General Settings - Planet Route Price'
@@ -86,7 +86,7 @@ def print_moon_dungeon_probs(config, moon):
     print(f'{moon} = {",".join(print_list)}')
 
 
-# -> a printout of each moon's non-zero probabilities | two-way substring match case insensitive
+# -> a printout of each moon's non-zero probabilities | two-way substring match case-insensitive
 def print_all_moon_dungeon_probs(config):
     print()
     moons = list(get_moons(config))

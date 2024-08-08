@@ -8,8 +8,6 @@ from src.InformationProviders import print_config_information
 from src.MergeConfig import merge_config
 from src.ParseLLLConfig import parse_cfg
 from src.SplitConfig import split_cfg
-from datetime import datetime
-import os
 
 backup_path = Path('backups')
 component_path = Path('component_configs')
