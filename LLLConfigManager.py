@@ -5,9 +5,8 @@ import argparse
 from src.DungeonProbFiller import translate_and_fill_all_moons
 from src.FileIO import make_backup_dir, save_config_backup, overwrite_main_config
 from src.InformationProviders import print_config_information
-from src.MergeConfig import merge_config
 from src.ParseLLLConfig import parse_cfg
-from src.SplitConfig import split_cfg
+from src.SplitConfig import split_cfg, merge_config
 
 backup_path = Path('backups')
 component_path = Path('component_configs')
