@@ -44,8 +44,8 @@ def check_non_default_route_prices(config):
                     default = str(config[section][field_to_check].previous_block)[start_index:]
                     if default.strip() != config[section][field_to_check].value.strip():
                         print(
-                            f'{get_clean_section_name(section)}: Default of {default.strip()} '
-                            f'does not match {config[section][field_to_check].value.strip()}')
+                            f'{get_clean_section_name(section)}: {config[section][field_to_check].value.strip()} '
+                            f'does not match Default of {default.strip()}')
                 else:
                     raise ValueError(': but also no :?')
             else:
