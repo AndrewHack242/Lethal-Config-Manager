@@ -1,23 +1,8 @@
 import copy
 
-from SplitConfig import get_clean_section_name
 from configupdater import ConfigUpdater
 
-
-def get_moons(config):
-    moons = set[str]()
-    for section in config.sections():
-        if ' Level' in section:
-            moons.add(get_clean_section_name(section))
-    return moons
-
-
-def get_dungeons(config):
-    moons = []
-    for section in config.sections():
-        if ' Dungeon' in section:
-            moons.append(section)
-    return moons
+from src.NameGetters import get_moons, get_dungeons
 
 
 def match(key: str, moon: str) -> bool:

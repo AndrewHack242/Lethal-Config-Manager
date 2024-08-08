@@ -1,16 +1,14 @@
-import copy
 import sys
 from pathlib import Path
 import argparse
 
-from DungeonProbFiller import translate_and_fill_all_moons
-from InformationProviders import print_config_information
-from MergeConfig import merge_config
-from ParseLLLConfig import parse_cfg
-from SplitConfig import split_cfg
+from src.DungeonProbFiller import translate_and_fill_all_moons
+from src.InformationProviders import print_config_information
+from src.MergeConfig import merge_config
+from src.ParseLLLConfig import parse_cfg
+from src.SplitConfig import split_cfg
 from datetime import datetime
 import os
-from configupdater import ConfigUpdater
 
 backup_path = Path('backups')
 component_path = Path('component_configs')
