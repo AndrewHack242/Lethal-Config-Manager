@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 
 from src.DungeonProbFiller import translate_and_fill_all_moons
+from src.FileIO import make_backup_dir, save_config_backup, overwrite_main_config
 from src.InformationProviders import print_config_information
 from src.MergeConfig import merge_config
 from src.ParseLLLConfig import parse_cfg
@@ -20,34 +21,9 @@ def parse_args():
     return parser.parse_args()
 
 
-# split the config into its sections in different files
-# wait for input to continue, allow edits to the components
-# re-combine the components and save in the original location and in the backup folder
-def make_backup_dir() -> Path:
-    today = datetime.now()
-    if not backup_path.exists():
-        os.mkdir(backup_path)
-
-    dir_path = backup_path.joinpath(today.strftime('%Y%m%d-%H%M%S'))
-
-    os.mkdir(dir_path)
-
-    return dir_path
-
-
-def save_config_backup(config, filename, backup_dir):
-    with open(backup_dir.joinpath(filename), 'w') as configfile:
-        config.write(configfile)
-
-
-def overwrite_main_config(config, cfg_path: Path):
-    with open(cfg_path, 'w') as configfile:
-        config.write(configfile)
-
-
 def main(cfg_path: Path) -> int:
     config = parse_cfg(cfg_path)
-    backup_dir = make_backup_dir()
+    backup_dir = make_backup_dir(backup_path)
     save_config_backup(config, 'LethalLevelLoader_original_backup.cfg', backup_dir)
     translate_and_fill_all_moons(config)
     split_cfg(config, component_path)
